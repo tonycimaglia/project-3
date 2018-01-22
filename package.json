@@ -2,9 +2,13 @@
   "name": "project-3",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" "
+    "dev": "concurrently \"nodemon ./bin/www\" \"cd ./client  && npm start \" ",
+    "postinstall": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
