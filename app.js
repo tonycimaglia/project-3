@@ -1,14 +1,31 @@
+require('dotenv').config()
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const mongoose = require('mongoose')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+// DB setup
+mongoose.Promise = global.Promise
+mongoose.connect(process.env.MONGODB_URI)
+
+const connection = mongoose.connection
+connection.on('connected', () => {
+  console.log('Mongoose Connected Successfully')
+})
+
+// If the connection throws an error
+connection.on('error', (err) => {
+  console.log('Mongoose default connection error: ' + err)	
+}) 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
