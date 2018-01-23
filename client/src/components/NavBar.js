@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Nav = styled.div`
     background-color: #FAFAFA;
@@ -20,10 +21,10 @@ class NavBar extends Component {
                     <p>ParkShare</p>
                     </div>
                     <div>
-                    <p>Neighborhoods</p>
+                    <Link to='/'>Neighborhoods</Link>
                     </div>
                     <div>
-                    <p>Users</p>
+                    <Link to='/users'>Users</Link>
                     </div>
             </Nav>
         )
