@@ -1,9 +1,12 @@
 require('dotenv').config()
+
+const User = require('./models/User')
+const PrivateSpace = require('./models/PrivateSpace')
+const PublicSpace = require('./models/PublicSpace')
+
 const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.Promise = global.Promise
-
-const { User, PrivateSpace, PublicSpace } = require('./schema')
 
 // connect to database
 mongoose.connect(process.env.MONGODB_URI)
@@ -21,22 +24,22 @@ mongoose.connection.on('error', (error) => {
 })
 
 // I also need to delete the public spaces
-// PublicSpace.remove({})
-//     .then(() => {
-//         const seedPublicSpace1 = new PublicSpace({
-//             neighborhood: '',
-//             description: '',
-//             location: '',
-//             hours: '',
-//             availability: true,
-//             public: false
-//         })
-//         return seedPublicSpace1.save()
-//     })
-//     .catch((error) => {
-//         console.log('!!!!! ERROR SAVING SEEDED DATA !!!!!')
-//         console.log(error)
-//     })
+PublicSpace.remove({})
+    .then(() => {
+        const seedPublicSpace1 = new PublicSpace({
+            neighborhood: 'Candler Park',
+            description: 'Free Street Parking Along Euclid Ave',
+            location: 'Euclid Ave',
+            hours: '24hrs a day',
+            availability: true,
+            public: true
+        })
+        return seedPublicSpace1.save()
+    })
+    .catch((error) => {
+        console.log('!!!!! ERROR SAVING SEEDED DATA !!!!!')
+        console.log(error)
+    })
 
 // Delete all users, then add some fake ones
 User.remove({})
@@ -48,10 +51,10 @@ User.remove({})
         })
 
         const seedPrivateSpace1 = new PrivateSpace({
-            neighborhood: '',
-            description: '',
-            location: '',
-            hours: '',
+            neighborhood: 'Candler Park',
+            description: 'Private Parking Space in Euclid Court Apartments',
+            location: '1335 Euclid Ave. Atlanta, GA 30307',
+            hours: 'M-F, 8:00am-6:00pm',
             availability: true,
             public: false
         })
