@@ -23,6 +23,32 @@ mongoose.connection.on('error', (error) => {
     process.exit(-1)
 })
 
+User.remove({})
+    .then(() => {
+        const seedUser1 = new User({
+            userName: 'Eva',
+            email: 'evaCimaglia@gmail.com',
+            privateSpaces: []
+        })
+
+        const seedPrivateSpace1 = new PrivateSpace({
+            neighborhood: 'Candler Park',
+            description: 'Private Parking Space in Euclid Court Apartments',
+            location: '1335 Euclid Ave. Atlanta, GA 30307',
+            hours: 'M-F, 8:00am-6:00pm',
+            availability: true,
+            public: false
+        })
+
+        seedUser1.privateSpaces.push(seedPrivateSpace1)
+
+        return seedUser1.save()
+
+    }).catch((error) => {
+        console.log('!!!!! ERROR SAVING SEEDED DATA !!!!!')
+        console.log(error)
+    })
+
 // I also need to delete the public spaces
 PublicSpace.remove({})
     .then(() => {
@@ -41,11 +67,8 @@ PublicSpace.remove({})
         console.log(error)
     }).then(() => {
         mongoose.connection.close()
-        console.log(`
-      Finished seeding database...
-      
-      Disconnected from MongoDB
-    `)
+        console.log(`Finished seeding database...
+        Disconnected from MongoDB`)
     })
 
 // Delete all users, then add some fake ones
