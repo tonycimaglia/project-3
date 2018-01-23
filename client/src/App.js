@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Switch/*, Link */} from 'react-router-d
 // import styled from 'styled-components'
 import NavBar from './components/NavBar'
 import Neighborhoods from './components/Neighborhoods'
-import User from './components/User'
-import UsersList from './components/UsersList'
 import UsersPage from './components/UsersPage'
 
 class App extends Component {

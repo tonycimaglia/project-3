@@ -7,7 +7,8 @@ class UsersPage extends Component {
 
     // We'll set up the ideas array as an empty array to begin with
     state = {
-        users: []
+        users: [],
+        newUser: {}
     }
 
     async componentWillMount() {
@@ -16,12 +17,22 @@ class UsersPage extends Component {
     }
 
     createUser = async () => {
-        const response = await axios.post(`/api/users`) // Ask the server to create a new idea in the database
-        const newUser = response.data // Grab the new idea from the server
+        const response = await axios.post(`/api/users`, this.state.newUser)
+        const newUser = response.data
+        const newUsers = [...this.state.users]
+        newUsers.unshift(newUser)
+        this.setState({ users: newUsers })
+    }
 
-        const newUsers = [...this.state.users] // Copy the old ideas list into a new one
-        newUsers.push(newUser) // This will add the new Idea to the beginning of the array
-        this.setState({ users: newUsers }) // update the state with the new ideas list
+    handleChange = (e) => {
+        const newUser = { ...this.state.newUser }
+        newUser[e.target.name] = e.target.value
+        this.setState({ newUser })
+    }
+
+    handleSignUp = (e) => {
+        e.preventDefault()
+        this.createUser()
     }
 
     render() {
@@ -32,7 +43,7 @@ class UsersPage extends Component {
                 </div>
                 <UsersList users={this.state.users} />
                 <div>
-                    <form onSubmit={this.createUser}>
+                    <form onSubmit={this.handleSignUp}>
                         <div>
                             <label htmlFor="userName">User Name</label>
                             <input onChange={this.handleChange} name="userName" type="text" value={this.state.userName} />
@@ -43,7 +54,7 @@ class UsersPage extends Component {
                             <input onChange={this.handleChange} name="email" type="text" value={this.state.email} />
                         </div>
 
-                        <button>Submit</button>
+                        <input type="submit" value="New User"/>
                     </form>
                 </div>
             </div>
