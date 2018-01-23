@@ -4,7 +4,10 @@ import React from 'react'
 const User = (props) => {
     return (
         <div>
-                <p>{props.user.userName}</p>
+            <p>{props.user.userName}</p>
+            <button onClick={() => { props.deleteUser(props.user) }}>
+                Delete User
+            </button>
         </div>
     )
 }

@@ -21,5 +21,15 @@ router.post('/', (req, res) => {
       .catch((error) => console.log(error))
 })
 
+router.delete('/:userId', async (req, res) => {
+  try {
+    await User.findByIdAndRemove(req.params.userId) // Delete the idea from the database
+    res.sendStatus(200) // Send back a status of 200 to tell the client that the delete was successful
+  } catch (error) {
+    console.log(error)
+    res.sendStatus(500) // If there is any error, tell the client something went wrong on the server
+  }
+})
+
 module.exports = router
 

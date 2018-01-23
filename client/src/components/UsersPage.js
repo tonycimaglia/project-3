@@ -35,13 +35,31 @@ class UsersPage extends Component {
         this.createUser()
     }
 
+    deleteUser = async (user) => {
+        try {
+            await axios.delete(`/api/users/${user._id}`) // Ask the server to delete this idea
+
+            const indexToDelete = this.state.users.indexOf(user) // Determine where in our ideas array it lived
+            const newUsers = [...this.state.users] // copy the old ideas list into a new one
+            newUsers.splice(indexToDelete, 1) // remove the idea we deleted from this new array
+
+            // update the state with our new ideas list, so the deleted
+            // idea will no longer show up on the screen
+            this.setState({ users: newUsers })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     render() {
         return (
             <div>
                 <div>
                     <h1>Users:</h1>
                 </div>
-                <UsersList users={this.state.users} />
+                <UsersList
+                    users={this.state.users}
+                    deleteUser={this.deleteUser} />
                 <div>
                     <form onSubmit={this.handleSignUp}>
                         <div>
@@ -54,7 +72,7 @@ class UsersPage extends Component {
                             <input onChange={this.handleChange} name="email" type="text" value={this.state.email} />
                         </div>
 
-                        <input type="submit" value="New User"/>
+                        <input type="submit" value="New User" />
                     </form>
                 </div>
             </div>
