@@ -1,4 +1,5 @@
-const { Schema } = require('mongoose')
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const PublicSpaceSchema = new Schema(
     {
@@ -22,7 +23,7 @@ const PublicSpaceSchema = new Schema(
             type: Boolean,
             required: true
         },
-        publicOrPrivate: {
+        public: {
             type: Boolean,
             required: true
         }
@@ -54,7 +55,7 @@ const PrivateSpaceSchema = new Schema(
             type: Boolean,
             required: true
         },
-        publicOrPrivate: {
+        public: {
             type: Boolean,
             required: true
         }
