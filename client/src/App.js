@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import styled from 'styled-components'
-import NeighborhoodsPage from './components/banana'
+import Neighborhoods from './components/Neighborhoods'
 // import User from './components/User'
 // import UsersList from './components/UsersList'
 
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NeighborhoodsPage />
+        <Neighborhoods />
       </div>
       // <Router>
       //   <div>

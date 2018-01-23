@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
-class NeighborhoodsPage extends Component {
+class Neighborhoods extends Component {
     render() {
         return (
             <div>
@@ -14,4 +14,4 @@ class NeighborhoodsPage extends Component {
     }
 }
 
-export default NeighborhoodsPage
+export default Neighborhoods
