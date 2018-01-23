@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import UsersList from './UsersList'
 
-class UserPage extends Component {
+class UsersPage extends Component {
 
     // We'll set up the ideas array as an empty array to begin with
     state = {
@@ -15,12 +15,12 @@ class UserPage extends Component {
         this.setState({ users: response.data }) // Put these ideas on the state, so they will render
     }
 
-    createIdea = async () => {
+    createUser = async () => {
         const response = await axios.post(`/api/users`) // Ask the server to create a new idea in the database
         const newUser = response.data // Grab the new idea from the server
 
         const newUsers = [...this.state.users] // Copy the old ideas list into a new one
-        newUsers.unshift(newUser) // This will add the new Idea to the beginning of the array
+        newUsers.push(newUser) // This will add the new Idea to the beginning of the array
         this.setState({ users: newUsers }) // update the state with the new ideas list
     }
 
@@ -29,13 +29,26 @@ class UserPage extends Component {
             <div>
                 <div>
                     <h1>Users:</h1>
-                    <button onClick={this.createUser}>New User</button>
                 </div>
-                <UsersList users={this.state.users}
-                    handleChange={this.handleChange} />
+                <UsersList users={this.state.users} />
+                <div>
+                    <form onSubmit={this.createUser}>
+                        <div>
+                            <label htmlFor="userName">User Name</label>
+                            <input onChange={this.handleChange} name="userName" type="text" value={this.state.userName} />
+                        </div>
+
+                        <div>
+                            <label htmlFor="email">Email</label>
+                            <input onChange={this.handleChange} name="email" type="text" value={this.state.email} />
+                        </div>
+
+                        <button>Submit</button>
+                    </form>
+                </div>
             </div>
         )
     }
 }
 
-export default UserPage
+export default UsersPage
