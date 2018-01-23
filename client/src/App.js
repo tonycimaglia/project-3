@@ -8,18 +8,15 @@ import Neighborhoods from './components/Neighborhoods'
 class App extends Component {
   render() {
     return (
-      <div>
-        <Neighborhoods />
-      </div>
-      // <Router>
-      //   <div>
-      //     <Switch>
-      //       {/* <Route exact path="/" component={NeighborhoodsPage} /> */}
-      //       {/* <Route path="/users" component={UsersList}/>
-      //       <Route path="/users/:userId" component={User}/> */}
-      //     </Switch>
-      //   </div>
-      // </Router>
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" component={Neighborhoods} />
+            {/* <Route path="/users" component={UsersList}/>
+            <Route path="/users/:userId" component={User}/> */}
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }
