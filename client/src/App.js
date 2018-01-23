@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import Neighborhoods from './components/Neighborhoods'
 import User from './components/User'
 import UsersList from './components/UsersList'
+import UsersPage from './components/UsersPage'
 
 class App extends Component {
   render() {
@@ -14,8 +15,7 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/" component={Neighborhoods} />
-            <Route path="/users/:userId" component={User}/>
-            <Route path="/users" component={UsersList}/>
+            <Route path="/users" component={UsersPage}/>
           </Switch>
         </div>
       </Router>

@@ -1,27 +1,25 @@
-import React, { Component } from 'react'
-import { Redirect, Link } from 'react-router-dom'
-import axios from 'axios'
+import React from 'react'
+import User from './User'
 
-class UsersList extends Component {
-    state = {
-        users: []
-    }
+const UsersList = (props) => {
 
-    async componentWillMount() {
-        const response = await axios.get('/api/users')
-        this.setState({ users: response.data })
-    }
+    // We are receiving all of the methods each Idea needs as props
+    // inside of this component, so we can pass these directly down again
+    // by "spreading" the props into each Idea component (using the "spread
+    // operator" or `...`
 
-    render() {
-        return (
-            <div>
-                <h1>This is the list of Existing users:</h1>
-                {this.state.users.map(user => {
-                    return (<Link to={`/user/${user._id}`}>{user.userName}</Link>)
-                })}
-            </div>
-        )
-    }
+    // We'll pass the `idea` along as well.
+    return (
+        <div>
+            {
+                props.users.map((user) => {
+                    return (
+                        <User user={user} {...props} key={user._id} />
+                    )
+                })
+            }
+        </div>
+    )
 }
 
 export default UsersList

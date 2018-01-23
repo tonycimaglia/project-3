@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
 // import { Redirect } from 'react-router-dom'
 
-class User extends Component {
-    render() {
-        return (
-            <div>
-                <p>Username:</p> 
-                <p>Email:</p>
-                <p>Private Spaces:</p>
-            </div>
-        )
-    }
+const User = (props) => {
+    return (
+        <div>
+                <p>{props.user.userName}</p>
+        </div>
+    )
 }
 
 export default User
