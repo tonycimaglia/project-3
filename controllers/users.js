@@ -1,6 +1,6 @@
 const express = require('express')
-const { User } = require('../db/schema')
 const router = express.Router()
+const User = require('../db/models/user')
 
 router.get('/', (req, res) => {
   User.find().then(users => {
@@ -10,3 +10,4 @@ router.get('/', (req, res) => {
 })
 
 module.exports = router
+
