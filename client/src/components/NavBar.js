@@ -29,7 +29,7 @@ class NavBar extends Component {
         return (
             <Nav>
                 <div>
-                    <p>ParkShare</p>
+                    <p>ParkShare - Atlanta</p>
                 </div>
                 <div>
                     <Link to='/'>Neighborhoods</Link>

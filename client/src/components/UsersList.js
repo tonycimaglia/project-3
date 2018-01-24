@@ -3,12 +3,12 @@ import User from './User'
 
 const UsersList = (props) => {
 
-    // We are receiving all of the methods each Idea needs as props
+    // We are receiving all of the methods each User needs as props
     // inside of this component, so we can pass these directly down again
-    // by "spreading" the props into each Idea component (using the "spread
+    // by "spreading" the props into each User component (using the "spread
     // operator" or `...`
 
-    // We'll pass the `idea` along as well.
+    // We'll pass the `user` along as well.
     return (
         <div>
             {

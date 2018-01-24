@@ -91,8 +91,8 @@ class UsersPage extends Component {
                 </div>
                 <UsersList
                     users={this.state.users}
-                    handleChange={this.handleUserChange}
-                    updateIdea={this.updateIdea}
+                    handleUserChange={this.handleUserChange}
+                    updateUser={this.updateUser}
                     deleteUser={this.deleteUser} />
                 <div>
                     <form onSubmit={this.handleSignUp}>
