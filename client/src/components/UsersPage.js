@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
 import UsersList from './UsersList'
+import BackgroundContainer from './styled_components/BackgroundContainer'
 
 class UsersPage extends Component {
 
@@ -85,7 +85,7 @@ class UsersPage extends Component {
 
     render() {
         return (
-            <div>
+            <BackgroundContainer>
                 <div>
                     <h1>Users:</h1>
                 </div>
@@ -109,7 +109,7 @@ class UsersPage extends Component {
                         <input type="submit" value="New User" />
                     </form>
                 </div>
-            </div>
+            </BackgroundContainer>
         )
     }
 }

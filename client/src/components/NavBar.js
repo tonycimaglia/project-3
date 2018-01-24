@@ -29,10 +29,10 @@ class NavBar extends Component {
         return (
             <Nav>
                 <div>
-                    <p>ParkShare - Atlanta</p>
+                    <Link to='/'>Neighborhoods</Link>
                 </div>
                 <div>
-                    <Link to='/'>Neighborhoods</Link>
+                    <p>ParkShare - Atlanta</p>
                 </div>
                 <div>
                     <Link to='/users'>Users</Link>
