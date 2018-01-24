@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const User = (props) => {
+    const url = `/users/${props.user._id}`
     return (
         <div>
-            <Link to="/users/:userId"><p>{props.user.userName}</p></Link>
+            <Link to={url}><p>{props.user.userName}</p></Link>
 
             <input type="text"
                 name="userName"

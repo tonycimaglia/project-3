@@ -8,6 +8,7 @@ class Neighborhoods extends Component {
             <BackgroundContainer>
                 <h1>Atlanta Neighborhoods:</h1>
                 <div>Candler Park</div>
+                
                 <div>Little Five Points</div>
                 <div>Old Fourth Ward</div>
             </BackgroundContainer>

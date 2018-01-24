@@ -1,5 +1,6 @@
 import React from 'react'
 import User from './User'
+import UserProfilePage from './UserProfilePage';
 
 const UsersList = (props) => {
 
