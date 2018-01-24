@@ -1,10 +1,10 @@
 import React from 'react'
-// import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const User = (props) => {
     return (
         <div>
-            <p>{props.user.userName}</p>
+            <Link to="/users/:userId"><p>{props.user.userName}</p></Link>
 
             <input type="text"
                 name="userName"

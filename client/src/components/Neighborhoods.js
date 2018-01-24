@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import BackgroundContainer from './styled_components/BackgroundContainer'
 // import { Redirect } from 'react-router-dom'
 
