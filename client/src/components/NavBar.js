@@ -3,14 +3,25 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const Nav = styled.div`
-    background-color: #FAFAFA;
+    background-color: #21232A;
+    color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 26px 5vw;
-    width: 90vw;
-    height: 25px;
-    border-bottom: 1px solid rgba(0,0,0,.0975)
+    width: 100vw;
+    height: 50px;
+    border-bottom: 1px solid rgba(0,0,0,.0975);
+
+    a{
+        color: white;
+        text-decoration: none;
+}
+    p{
+        color:  #80D8F7;
+    }
+    a:hover{
+        color: #80D8F7
+    }
 `
 
 class NavBar extends Component {
@@ -19,13 +30,13 @@ class NavBar extends Component {
             <Nav>
                 <div>
                     <p>ParkShare</p>
-                    </div>
-                    <div>
+                </div>
+                <div>
                     <Link to='/'>Neighborhoods</Link>
-                    </div>
-                    <div>
+                </div>
+                <div>
                     <Link to='/users'>Users</Link>
-                    </div>
+                </div>
             </Nav>
         )
     }
