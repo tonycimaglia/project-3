@@ -5,7 +5,7 @@ import BackgroundContainer from './styled_components/BackgroundContainer'
 
 class UsersPage extends Component {
 
-    // We'll set up the ideas array as an empty array to begin with
+    // We'll set up the users array as an empty array to begin with
     state = {
         users: [],
         newUser: {}

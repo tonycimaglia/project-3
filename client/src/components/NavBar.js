@@ -32,7 +32,7 @@ class NavBar extends Component {
                     <Link to='/'>Neighborhoods</Link>
                 </div>
                 <div>
-                    <p>ParkShare - Atlanta</p>
+                    <p>ParkShare</p>
                 </div>
                 <div>
                     <Link to='/users'>Users</Link>

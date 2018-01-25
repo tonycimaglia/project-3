@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React from 'react'
+// import axios from 'axios'
 
 // get request axios
 // maatch.props.params
-
 
 const UserProfilePage = (props) => {
 
