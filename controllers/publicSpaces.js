@@ -3,8 +3,8 @@ const router = express.Router()
 const PublicSpace = require('../db/models/PublicSpace')
 
 router.get('/', (req, res) => {
-    PublicSpace.find().then(publicspaces => {
-        res.json(publicspaces)
+    PublicSpace.find().then(publicSpaces => {
+        res.json(publicSpaces)
     })
         .catch((err) => console.log(err))
 })

@@ -95,6 +95,7 @@ class UsersPage extends Component {
                     updateUser={this.updateUser}
                     deleteUser={this.deleteUser} />
                 <div>
+                    <h1>Create a new User:</h1>
                     <form onSubmit={this.handleSignUp}>
                         <div>
                             <label htmlFor="userName">User Name</label>
