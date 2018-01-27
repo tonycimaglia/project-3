@@ -3,15 +3,12 @@ const router = express.Router()
 const User = require('../db/models/User')
 // const PrivateSpace = require('../db/models/PrivateSpace')
 
-router.get('/', (request, response) => {
-    const userId = request.params.userId
-    User.findById(userId)
-        .then((user) => {
-            response.json(user)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+router.get('/:userId', (req, res) => {
+    User.findById(req.params.userId)
+        .then((user) => res.json(user.privateSpace.id(req.params.privateSpaceId)))
+        .catch((error) => { console.log(error) })
 })
+
+module.exports = router
 
 module.exports = router
