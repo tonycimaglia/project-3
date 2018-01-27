@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const UsersController = require('./controllers/users')
 const PublicSpacesController = require('./controllers/publicSpaces')
+const PrivateSpacesController = require('./controllers/privateSpaces')
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/users', UsersController)
 app.use('/api/publicSpaces', PublicSpacesController)
+app.use('/api/users/:userId/privateSpaces', PrivateSpacesController)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
