@@ -43,40 +43,24 @@ class UsersPage extends Component {
             const newUsers = [...this.state.users] // copy the old ideas list into a new one
             newUsers.splice(indexToDelete, 1) // remove the idea we deleted from this new array
 
-            // update the state with our new ideas list, so the deleted
-            // idea will no longer show up on the screen
             this.setState({ users: newUsers })
         } catch (error) {
             console.log(error)
         }
     }
 
-    //We need to pass in multiple arguments here.  The first is the object of the specific user that is being changed.
-    //And the event object is the special event listener object that has information about the value and name
     handleUserChange = (user, event) => {
-        const updatedUsers = [...this.state.users] //Here we use the spread operator to clone the array
-
+        const updatedUsers = [...this.state.users]
         const userToUpdate = updatedUsers.find((newUser) => {
             return newUser._id === user._id
         })
-
-        //Here we are using bracket syntax instead of dot-notation to transform a specific property
-        //More info on bracket syntax here
-        //https://medium.com/@prufrock123/js-dot-notation-vs-bracket-notation-797c4e34f01d
         userToUpdate[event.target.name] = event.target.value
-
-        // update the state with our updated ideas
         this.setState({ users: updatedUsers })
     }
 
     updateUser = async (user) => {
         try {
-
-            await axios.patch(`/api/users/${user._id}`, user) // ask the server to update the user in the database
-
-            // We don't need to do anything else here, because the state was already
-            // updated by our handleChange method
-
+            await axios.patch(`/api/users/${user._id}`, user)
         } catch (error) {
             console.log(error)
         }
@@ -86,9 +70,6 @@ class UsersPage extends Component {
     render() {
         return (
             <BackgroundContainer>
-                <div>
-                    <h1>Users:</h1>
-                </div>
                 <UsersList
                     users={this.state.users}
                     handleUserChange={this.handleUserChange}
