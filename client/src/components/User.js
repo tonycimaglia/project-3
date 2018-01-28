@@ -4,7 +4,6 @@ import React from 'react'
 
 
 const User = (props) => {
-    // const url = `/users/${props.user._id}`
     return (
         <div>
             <p>{props.user.userName}</p>

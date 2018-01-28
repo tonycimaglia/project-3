@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import BackgroundContainer from './styled_components/BackgroundContainer'
+import PrivateSpaceCard from './styled_components/PrivateSpaceCard'
+
 
 class UserProfilePage extends Component {
     state = {
@@ -32,20 +35,23 @@ class UserProfilePage extends Component {
     render() {
         console.log(this.props)
         return (
-            <div>
+            <BackgroundContainer>
                 <h1>{this.state.user.userName}'s page</h1>
                 <div>
                     {this.state.privateSpaces.map((privateSpace) => {
                         return (
                             <div key={privateSpace._id}>
-                                <div>
-                                    {privateSpace.neighborhood}
-                                </div>
+                                <PrivateSpaceCard>
+                                    <div>Neighborhood: {privateSpace.neighborhood}</div>
+                                    <div>Description: {privateSpace.description}</div>
+                                    <div>Location: {privateSpace.location}</div>
+                                    <div>Hours: {privateSpace.hours}</div>
+                                </PrivateSpaceCard>
                             </div>
                         )
                     })}
                 </div>
-            </div>
+            </BackgroundContainer>
         )
     }
 }
