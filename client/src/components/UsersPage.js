@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import UsersList from './UsersList'
+import UserProfilePage from './UserProfilePage'
 import BackgroundContainer from './styled_components/BackgroundContainer'
 
 class UsersPage extends Component {
@@ -68,6 +69,7 @@ class UsersPage extends Component {
 
 
     render() {
+        const UserProfilePageComponent = (props) => (<UserProfilePage {...props}/>)
         return (
             <BackgroundContainer>
                 <UsersList
@@ -75,7 +77,7 @@ class UsersPage extends Component {
                     handleUserChange={this.handleUserChange}
                     updateUser={this.updateUser}
                     deleteUser={this.deleteUser} />
-                <div>
+                {/* <div>
                     <h1>Create a new User:</h1>
                     <form onSubmit={this.handleSignUp}>
                         <div>
@@ -90,7 +92,7 @@ class UsersPage extends Component {
 
                         <input type="submit" value="New User" />
                     </form>
-                </div>
+                </div> */}
             </BackgroundContainer>
         )
     }

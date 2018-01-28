@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch/*, Link */} from 'react-router-d
 import NavBar from './components/NavBar'
 import Neighborhoods from './components/Neighborhoods'
 import UsersPage from './components/UsersPage'
+import UserProfilePage from './components/UserProfilePage'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Neighborhoods} />
             <Route exact path="/users" component={UsersPage}/>
+            <Route exact path="/users/:userId" component={UserProfilePage}/>
           </Switch>
         </div>
       </Router>
