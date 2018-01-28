@@ -9,6 +9,14 @@ router.get('/', (req, res) => {
     .catch((err) => console.log(err))
 })
 
+router.get('/:userId', (req, res) => {
+  User.findById(req.params.userId)
+  .then(user => {
+      res.json(user)
+  })
+  .catch((error) => console.log(error))
+})
+
 router.post('/', (req, res) => {
 
   console.log(req.body)

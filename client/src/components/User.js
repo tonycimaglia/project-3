@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
 
 const User = (props) => {
-    const url = `/users/${props.user._id}`
+    // const url = `/users/${props.user._id}`
     return (
         <div>
             <p>{props.user.userName}</p>
