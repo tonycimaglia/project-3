@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import BackgroundContainer from './styled_components/BackgroundContainer'
+import NeighborhoodCard from './styled_components/NeighborhoodCard'
 import PublicSpacesList from './PublicSpacesList'
 // import { Redirect } from 'react-router-dom'
 
@@ -19,11 +20,11 @@ class Neighborhoods extends Component {
         return (
             <BackgroundContainer>
                 <h1>Atlanta Neighborhoods:</h1>
-                <div>Candler Park</div>
+                <NeighborhoodCard>Candler Park</NeighborhoodCard>
                 <PublicSpacesList
                     publicSpaces={this.state.publicSpaces}/>
-                <div>Little Five Points</div>
-                <div>Old Fourth Ward</div>
+                <NeighborhoodCard>Little Five Points</NeighborhoodCard>
+                <NeighborhoodCard>Old Fourth Ward</NeighborhoodCard>
             </BackgroundContainer>
         )
     }
