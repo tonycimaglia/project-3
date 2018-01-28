@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import UsersList from './UsersList'
-import UserProfilePage from './UserProfilePage'
+// import UserProfilePage from './UserProfilePage'
 import BackgroundContainer from './styled_components/BackgroundContainer'
 
 class UsersPage extends Component {
@@ -69,7 +69,7 @@ class UsersPage extends Component {
 
 
     render() {
-        const UserProfilePageComponent = (props) => (<UserProfilePage {...props}/>)
+        // const UserProfilePageComponent = (props) => (<UserProfilePage {...props}/>)
         return (
             <BackgroundContainer>
                 <UsersList
