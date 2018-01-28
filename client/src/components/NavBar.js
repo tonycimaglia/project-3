@@ -20,7 +20,7 @@ const Nav = styled.div`
         color:  rgb(250, 220, 96);
     }
     a:hover{
-        color: #80D8F7
+        color: rgb(76, 172, 169)
     }
 `
 
