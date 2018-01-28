@@ -77,7 +77,7 @@ class UsersPage extends Component {
                     handleUserChange={this.handleUserChange}
                     updateUser={this.updateUser}
                     deleteUser={this.deleteUser} />
-                {/* <div>
+                <div>
                     <h1>Create a new User:</h1>
                     <form onSubmit={this.handleSignUp}>
                         <div>
@@ -92,7 +92,7 @@ class UsersPage extends Component {
 
                         <input type="submit" value="New User" />
                     </form>
-                </div> */}
+                </div>
             </BackgroundContainer>
         )
     }

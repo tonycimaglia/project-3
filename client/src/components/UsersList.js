@@ -11,6 +11,9 @@ class UsersList extends Component {
                         return (
                             <div key={user._id}>
                                 <Link to={`/users/${user._id}`}>{user.userName}</Link>
+                                <button onClick={() => { this.props.deleteUser(user) }}>
+                                    Delete User
+                            </button>
                             </div>
                         )
                     })}
