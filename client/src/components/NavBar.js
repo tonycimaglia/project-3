@@ -12,18 +12,15 @@ const Nav = styled.div`
     width: 100vw;
 
     a{
-        color: black;
+        color: rgb(34, 31, 32);
         text-decoration: none;
 }
     p{
-        color: black;
+        color: rgb(34, 31, 32);
         font-size: 50px;
     }
     a:hover{
-        color: rgb(76, 172, 169)
-    }
-    div.logo{
-        background-color: rgb(244, 174, 139);
+        color: rgb(76, 172, 169);
     }
 `
 
@@ -31,7 +28,7 @@ class NavBar extends Component {
     render() {
         return (
             <Nav>
-                <div className="logo">
+                <div>
                     <p>ParkShare</p>
                 </div>
                 <div>
