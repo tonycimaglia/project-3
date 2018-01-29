@@ -1,9 +1,10 @@
 import React from 'react'
+import PrivateSpaceCard from './styled_components/PrivateSpaceCard'
 
 const PublicSpace = (props) => {
     return (
         <div>
-            <div>
+            <PrivateSpaceCard>
                 neighborhood:
             {props.publicSpace.neighborhood}
                 description:
@@ -12,7 +13,7 @@ const PublicSpace = (props) => {
             {props.publicSpace.location}
                 hours:
             {props.publicSpace.hours}
-            </div>
+            </PrivateSpaceCard>
         </div>
     )
 }
