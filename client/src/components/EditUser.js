@@ -55,7 +55,7 @@ class EditUser extends Component {
                             <label htmlFor="email">Last Name</label>
                             <input onChange={this.handleChange} name="email" type="text" value={this.state.user.email} />
                         </div>
-                        <button>Update User</button>
+                        <input type="submit" value="Update User" />
                     </form>
             </div>
         )

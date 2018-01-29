@@ -10,6 +10,7 @@ const UserCard = styled.div`
     align-items: center;
     width: 200px;
     height: 200px;
+    margin: 20px;
 `
 
 export default UserCard
