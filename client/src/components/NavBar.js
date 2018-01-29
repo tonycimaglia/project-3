@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const Nav = styled.div`
-    background-color: rgb(250, 220, 96);
-    color: white;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(34, 31, 32);
     display: flex;
     justify-content: space-around;
     align-items: center;

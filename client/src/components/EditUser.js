@@ -46,6 +46,17 @@ class EditUser extends Component {
         return (
             <div>
                 <h1>Edit {this.state.user.userName}'s profile</h1>
+                <form onSubmit={this.handleEdit}>
+                        <div>
+                            <label htmlFor="userName">First Name</label>
+                            <input onChange={this.handleChange} name="userName" type="text" value={this.state.user.userName} />
+                        </div>
+                        <div>
+                            <label htmlFor="email">Last Name</label>
+                            <input onChange={this.handleChange} name="email" type="text" value={this.state.user.email} />
+                        </div>
+                        <button>Update User</button>
+                    </form>
             </div>
         )
     }

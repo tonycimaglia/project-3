@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 const BackgroundContainer = styled.div`
-    background-color: rgb(250, 220, 96);
-    color: white;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(34, 31, 32);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
