@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import Neighborhoods from './components/Neighborhoods'
 import UsersPage from './components/UsersPage'
 import UserProfilePage from './components/UserProfilePage'
+import EditUser from './components/EditUser'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
             <Route exact path="/" component={Neighborhoods} />
             <Route exact path="/users" component={UsersPage}/>
             <Route exact path="/users/:userId" component={UserProfilePage}/>
+            <Route exact path="/users/:userId/edit" component={EditUser} />
           </Switch>
         </div>
       </Router>

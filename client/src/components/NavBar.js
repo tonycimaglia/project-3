@@ -3,24 +3,26 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const Nav = styled.div`
-    background-color: black;
+    background-color: rgb(250, 220, 96);
     color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    height: 50px;
-    border-bottom: 1px solid rgba(0,0,0,.0975);
 
     a{
-        color: rgb(250, 220, 96);
+        color: black;
         text-decoration: none;
 }
     p{
-        color:  rgb(250, 220, 96);
+        color: black;
+        font-size: 50px;
     }
     a:hover{
         color: rgb(76, 172, 169)
+    }
+    div.logo{
+        background-color: rgb(244, 174, 139);
     }
 `
 
@@ -28,7 +30,7 @@ class NavBar extends Component {
     render() {
         return (
             <Nav>
-                <div>
+                <div className="logo">
                     <p>ParkShare</p>
                 </div>
                 <div>

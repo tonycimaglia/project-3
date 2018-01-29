@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import BackgroundContainer from './styled_components/BackgroundContainer'
 import PrivateSpaceCard from './styled_components/PrivateSpaceCard'
 
@@ -37,10 +38,12 @@ class UserProfilePage extends Component {
         return (
             <BackgroundContainer>
                 <h1>{this.state.user.userName}'s page</h1>
+                <Link to={`/users/${this.props.match.params.userId}/edit`}>Edit User</Link>
                 <div>
                     {this.state.privateSpaces.map((privateSpace) => {
                         return (
                             <div key={privateSpace._id}>
+                            <h2>Private Spaces:</h2>
                                 <PrivateSpaceCard>
                                     <div>Neighborhood: {privateSpace.neighborhood}</div>
                                     <div>Description: {privateSpace.description}</div>
