@@ -22,15 +22,17 @@ class Neighborhoods extends Component {
             <BackgroundContainer>
                 <h1>Atlanta Neighborhoods:</h1>
                 <NeighborhoodCard>
-                    <FlexRowWrap>
-                        <div>
-                            Candler Park
+                    <div>
+                        Candler Park
+                        </div>
+                    <div>
+                        <FlexRowWrap>
+                            Public Spaces:
+                            <PublicSpacesList
+                                publicSpaces={this.state.publicSpaces} />
+                        </FlexRowWrap>
                     </div>
-                        <PublicSpacesList
-                            publicSpaces={this.state.publicSpaces} />
-                    </FlexRowWrap>
                 </NeighborhoodCard>
-                <NeighborhoodCard>Little Five Points</NeighborhoodCard>
                 <NeighborhoodCard>Old Fourth Ward</NeighborhoodCard>
             </BackgroundContainer>
         )

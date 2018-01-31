@@ -5,14 +5,10 @@ const PublicSpace = (props) => {
     return (
         <div>
             <PrivateSpaceCard>
-                neighborhood:
-            {props.publicSpace.neighborhood}
-                description:
-            {props.publicSpace.description}
-                location:
-            {props.publicSpace.location}
-                hours:
-            {props.publicSpace.hours}
+                <div>neighborhood: {props.publicSpace.neighborhood}</div>
+                <div>description: {props.publicSpace.description}</div>
+                <div>location: {props.publicSpace.location}</div>
+                <div>hours: {props.publicSpace.hours}</div>
             </PrivateSpaceCard>
         </div>
     )

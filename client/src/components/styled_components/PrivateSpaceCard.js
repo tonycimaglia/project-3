@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 const PrivateSpaceCard = styled.div`
-    background-color: rgb(249, 252, 223);
-    color: rgb(76, 172, 169);
+    background-color: rgb(34, 31, 32);
+    color: white;
     font-size: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 40vw;
-    height: 300px;
+    width: 500px;
+    height: 200px;
 `
 
 export default PrivateSpaceCard
