@@ -13,7 +13,7 @@ const BackgroundContainer = styled.div`
     border-bottom: 1px solid rgba(0,0,0,.0975);
 
     a{
-        color: white;
+        color: rgb(34, 31, 32);
         text-decoration: none;
 }
     p{
@@ -21,6 +21,9 @@ const BackgroundContainer = styled.div`
     }
     a:hover{
         color: #80D8F7
+    }
+    h1{
+        color: rgb(34, 31, 32);
     }
 `
 
