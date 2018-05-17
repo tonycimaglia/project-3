@@ -21,6 +21,7 @@ class EditUser extends Component {
             .then(res => {
                 this.setState({ user: res.data })
             })
+            console.log("this is the user: ", this.state.user)
     }
 
     handleChange = (event) => {
@@ -56,6 +57,7 @@ class EditUser extends Component {
                             <input onChange={this.handleChange} name="email" type="text" value={this.state.user.email} />
                         </div>
                         <input type="submit" value="Update User" />
+                        <Link to={`/users/${this.state.user._id}`}>Cancel</Link>
                     </form>
             </div>
         )

@@ -11,6 +11,10 @@ const UserCard = styled.div`
     width: 200px;
     height: 200px;
     margin: 20px;
+
+    a {
+        color: white;
+    }
 `
 
 export default UserCard
