@@ -21,7 +21,6 @@ class EditUser extends Component {
             .then(res => {
                 this.setState({ user: res.data })
             })
-            console.log("this is the user: ", this.state.user)
     }
 
     handleChange = (event) => {
