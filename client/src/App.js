@@ -6,6 +6,7 @@ import Neighborhoods from './components/Neighborhoods'
 import UsersPage from './components/UsersPage'
 import UserProfilePage from './components/UserProfilePage'
 import EditUser from './components/EditUser'
+import SignUpPage from './components/SignUpPage'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Neighborhoods} />
             <Route exact path="/users" component={UsersPage}/>
+            <Route exact path="/signUp" component={SignUpPage}/>
             <Route exact path="/users/:userId" component={UserProfilePage}/>
             <Route exact path="/users/:userId/edit" component={EditUser} />
           </Switch>
