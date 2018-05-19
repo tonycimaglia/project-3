@@ -6,9 +6,8 @@ const BackgroundContainer = styled.div`
     color: rgb(34, 31, 32);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     border-bottom: 1px solid rgba(0,0,0,.0975);
 
@@ -24,6 +23,7 @@ const BackgroundContainer = styled.div`
     }
     h1{
         color: rgb(34, 31, 32);
+        text-align: center;
     }
 `
 

@@ -8,7 +8,7 @@ const NeighborhoodCard = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 80vw;
+    width: 300px;
     height: 300px;
     margin: 20px;
     border: 2px solid rgb(34, 31, 32);
